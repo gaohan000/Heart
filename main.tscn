@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpjvh6bo7dq3a"]
+
+[ext_resource type="Texture2D" uid="uid://c7uwgu713e1kb" path="res://Assets/Garden's Forest/background4.png" id="1_e3rav"]
+[ext_resource type="Script" path="res://main.gd" id="1_k7f2t"]
+[ext_resource type="Texture2D" uid="uid://d3aq6hpfl4w8k" path="res://Assets/Garden's Forest/background3.png" id="2_61pm8"]
+[ext_resource type="Texture2D" uid="uid://eyuvbd2xnsgc" path="res://Assets/Garden's Forest/background1.png" id="4_pjk1g"]
+[ext_resource type="Texture2D" uid="uid://r0be0auj2jkl" path="res://Assets/Garden's Forest/trees.png" id="5_lwqu1"]
+[ext_resource type="Texture2D" uid="uid://bu0y50p42vhy6" path="res://Assets/Garden's Forest/pushes.png" id="6_ot44k"]
+[ext_resource type="Texture2D" uid="uid://c8xclhof86iii" path="res://Assets/Garden's Forest/frontleaves.png" id="7_kmje6"]
+[ext_resource type="Texture2D" uid="uid://bxa1bx8vke1gu" path="res://Assets/heart title.png" id="9_ynchm"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_k7f2t")
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(571, 323)
+scale = Vector2(2.42969, 2.16667)
+texture = ExtResource("1_e3rav")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(575.5, 329.5)
+scale = Vector2(2.42773, 2.18333)
+texture = ExtResource("2_61pm8")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+scale = Vector2(2.41992, 2.15667)
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(571, 327.5)
+scale = Vector2(2.43359, 2.19667)
+texture = ExtResource("4_pjk1g")
+
+[node name="Trees" type="Sprite2D" parent="."]
+position = Vector2(570.5, 326.5)
+scale = Vector2(2.42773, 2.17667)
+texture = ExtResource("5_lwqu1")
+
+[node name="Pushes" type="Sprite2D" parent="."]
+position = Vector2(575.5, 330)
+scale = Vector2(2.42773, 2.21333)
+texture = ExtResource("6_ot44k")
+
+[node name="Frontleaves" type="Sprite2D" parent="."]
+position = Vector2(570.5, 333)
+scale = Vector2(2.42773, 2.22667)
+texture = ExtResource("7_kmje6")
+
+[node name="HeartTitle" type="Sprite2D" parent="."]
+position = Vector2(577, 223)
+texture = ExtResource("9_ynchm")
+
+[node name="PLAY" type="Button" parent="."]
+offset_left = 349.0
+offset_top = 385.0
+offset_right = 799.0
+offset_bottom = 464.0
+text = "PLAY"
+
+[node name="QUIT" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 492.0
+offset_right = 803.0
+offset_bottom = 571.0
+text = "QUIT
+"
+
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4rub5q18712a"]
+
+[ext_resource type="Texture2D" uid="uid://bn688g86kgp7n" path="res://Assets/selectFigure.png" id="1_kl2aw"]
+
+[node name="selectFigure" type="TextureRect"]
+offset_right = 62.0
+offset_bottom = 89.0
+pivot_offset = Vector2(40, 70)
+texture = ExtResource("1_kl2aw")
+expand_mode = 3

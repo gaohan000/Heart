@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8ewfaux67ddr"]
+
+[ext_resource type="PackedScene" uid="uid://bsvkbb1qm003w" path="res://world_icon.tscn" id="1_ol6n4"]
+[ext_resource type="Script" path="res://world_select.gd" id="1_v6ky4"]
+[ext_resource type="Script" path="res://world_icon.gd" id="2_v4dr4"]
+[ext_resource type="PackedScene" uid="uid://4rub5q18712a" path="res://select_figure.tscn" id="3_kq0f1"]
+[ext_resource type="Texture2D" uid="uid://drgat83bw0vli" path="res://Assets/worldSelectBackground.png" id="5_cjhkn"]
+
+[node name="worldSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6ky4")
+
+[node name="WorldIcon" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("1_ol6n4")]
+z_index = -2
+offset_left = 321.0
+offset_top = 259.0
+offset_right = 361.0
+offset_bottom = 299.0
+pivot_offset = Vector2(32, 20)
+script = ExtResource("2_v4dr4")
+next_level_right = NodePath("../WorldIcon2")
+next_scene_path = "res://level.tscn"
+
+[node name="WorldIcon2" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_ol6n4")]
+z_index = -2
+offset_left = 633.0
+offset_top = 255.0
+offset_right = 673.0
+offset_bottom = 295.0
+pivot_offset = Vector2(32, 20)
+script = ExtResource("2_v4dr4")
+level_name = "2"
+next_level_left = NodePath("../WorldIcon")
+next_level_right = NodePath("../WorldIcon3")
+
+[node name="WorldIcon3" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("1_ol6n4")]
+z_index = -2
+offset_left = 941.0
+offset_top = 255.0
+offset_right = 981.0
+offset_bottom = 295.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("2_v4dr4")
+level_name = "3"
+next_level_left = NodePath("../WorldIcon2")
+
+[node name="selectFigure" parent="." instance=ExtResource("3_kq0f1")]
+layout_mode = 0
+pivot_offset = Vector2(40, 90)
+
+[node name="worldSelectBackground" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1152.0
+offset_bottom = 654.0
+texture = ExtResource("5_cjhkn")
